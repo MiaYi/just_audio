@@ -99,7 +99,7 @@ abstract class JustAudioPlayer extends AudioPlayerPlatform {
 
 /// An HTML5-specific implementation of [JustAudioPlayer].
 class Html5AudioPlayer extends JustAudioPlayer {
-  final _audioElement = AudioElement();
+  final _audioElement = AudioElement()..autoplay = true;
   late final _playPauseQueue = _PlayPauseQueue(_audioElement);
   Completer? _durationCompleter;
   AudioSourcePlayer? _audioSourcePlayer;
