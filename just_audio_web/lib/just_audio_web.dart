@@ -242,7 +242,9 @@ class Html5AudioPlayer extends JustAudioPlayer {
       _audioElement.src = src;
       _audioElement.playbackRate = _speed;
       _audioElement.preload = 'auto';
-      _audioElement.load();
+      _audioElement.muted = true;
+      _audioElement.play();
+      _audioElement.muted = false;
       if (initialPosition != null) {
         _audioElement.currentTime = initialPosition.inMilliseconds / 1000.0;
       }
